@@ -17,3 +17,10 @@ for i in range(0,4):
 
 #Linked List
 
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+        
+
