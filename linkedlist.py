@@ -49,3 +49,7 @@ n4 = Node(12)
 n3.next = n4
 
 sll.traversal()
+
+#Linked List 
+print(n3.next)
+print()
