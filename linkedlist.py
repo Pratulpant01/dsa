@@ -17,7 +17,6 @@
 
 #Traversal in LinkedList
 
-from time import sleep
 
 
 class Node:
@@ -29,14 +28,22 @@ class LinkedList:
     def __init__(self):
         self.head = None
     
-    def traversal(self):
-        if self.head is None:
+    def traversal(self1):
+        if self1.head is None:
             print('Singly Linked List is empty')
         else:
-            a = self.head  # Creating a temp variable to assign self.head so that it is not changed
+            a = self1.head  # Creating a temp variable to assign self.head so that it is not changed
             while a is not None:
                 print(a.data, end= "=>")
                 a = a.next
+    
+    def add_at_begin(self2, data):
+        print()
+        nb = Node(data)
+        nb.next = self2.head
+        self2.head = nb
+
+
 
 n1= Node(4)
 sll = LinkedList()
@@ -49,5 +56,8 @@ n4 = Node(12)
 n3.next = n4
 
 sll.traversal()
+sll.add_at_begin(1)
+sll.traversal()
+
 
 #Linked List 
