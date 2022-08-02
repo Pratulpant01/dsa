@@ -51,5 +51,3 @@ n3.next = n4
 sll.traversal()
 
 #Linked List 
-print(n3.next)
-print()
