@@ -36,13 +36,36 @@ class LinkedList:
             while a is not None:
                 print(a.data, end= "=>")
                 a = a.next
-    
+    # Insert data at beginning
     def add_at_begin(self2, data):
         print()
         nb = Node(data)
         nb.next = self2.head
         self2.head = nb
 
+    #Insert data at end
+
+    def insert_at_end(self3, data):
+        print()
+        ne = Node(data)
+        a= self3.head
+        while a.next is not None:
+            a = a.next
+        a.next = ne
+
+    # Insert in between
+
+    def insert_in_between(self4, position, data):
+        print()
+        nb= Node(data)
+        a=self4.head
+
+        for i in range(1, position-1):
+            a=a.next
+        
+        nb.next = a.next
+        a.next = nb
+        
 
 
 n1= Node(4)
@@ -56,7 +79,7 @@ n4 = Node(12)
 n3.next = n4
 
 sll.traversal()
-sll.add_at_begin(1)
+sll.insert_in_between(4, 40)
 sll.traversal()
 
 
