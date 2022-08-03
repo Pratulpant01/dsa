@@ -66,6 +66,38 @@ class LinkedList:
         nb.next = a.next
         a.next = nb
         
+    # Deletion in beginning
+    def delete_in_begin(self):
+        print()
+        a= self.head
+        self.head = a.next
+        a.next = None
+
+    #Deletion at end
+
+    def delete_at_end(self):
+        print()
+        previous = self.head
+        a= self.head.next
+        while a.next is not None:
+            a= a.next
+            previous = previous.next
+        previous.next = None
+
+    # Deletion in between
+
+    def delete_in_between(self, position):
+        print()
+
+        previous = self.head
+        a= self.head.next
+
+        for i in range(1, position-1):
+            a= a.next
+            previous = previous.next
+        
+        previous.next = a.next
+        a.next = None
 
 
 n1= Node(4)
@@ -79,8 +111,9 @@ n4 = Node(12)
 n3.next = n4
 
 sll.traversal()
-sll.insert_in_between(4, 40)
+sll.insert_in_between(3, 40)
 sll.traversal()
-
+sll.delete_in_between(3)
+sll.traversal()
 
 #Linked List 
