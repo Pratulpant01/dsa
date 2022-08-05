@@ -37,11 +37,11 @@ root.left.right = Node(5)
 root.right.left = Node(6)
 root.right.right = Node(9)
 
-print('\n InOrder Traversal')
+print('\n InOrder Traversal', end= '-')
 root.traInOrder()
-print('\n PostOrder Traversal')
+print('\n PostOrder Traversal', end= '-')
 
 root.traPostOrder()
-print('\n PreOrder Traversal')
+print('\n PreOrder Traversal', end= '-')
 
 root.traPreOrder()
