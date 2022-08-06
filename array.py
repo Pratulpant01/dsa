@@ -92,3 +92,6 @@ for i in range(len(arr)):
 
 print('The index of first occurence of 2 is')
 print(arr.index(2))
+
+
+#array python
