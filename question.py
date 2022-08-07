@@ -59,16 +59,32 @@
             
         
 # Given a string s, find the length of the longest substring without repeating characters.
-s= 'BAB'
-charSet = set()
-l= 0
-res = 0
-for r in range(len(s)):
-    print(r)
-    while s[r] in charSet:
-        print(s[r])
-        charSet.remove(s[l])
-        l+=1
-    charSet.add(s[r])
-    res = max(res, r-l +1)
+# s= 'BAB'
+# charSet = set()
+# l= 0
+# res = 0
+# for r in range(len(s)):
+#     print(r)
+#     while s[r] in charSet:
+#         print(s[r])
+#         charSet.remove(s[l])
+#         l+=1
+#     charSet.add(s[r])
+#     res = max(res, r-l +1)
+
+import re
+
+
+nums = [1, 2, 3,1]
+charSet = []
+res = False
+for x in nums:
+    if(x in charSet):
+        res = True
+    else:
+        charSet.append(x)
+        res = False
+print(res)
+
+
     
