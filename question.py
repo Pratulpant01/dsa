@@ -72,19 +72,21 @@
 #     charSet.add(s[r])
 #     res = max(res, r-l +1)
 
-import re
+nums = [1,2,3,4]
+charSet = set(nums)
+print(charSet)
+if(len(charSet) != len(nums)):
+    print(True)
+else:
+    print(False)
 
+#OR
 
-nums = [1, 2, 3,1]
-charSet = []
-res = False
-for x in nums:
-    if(x in charSet):
-        res = True
-    else:
-        charSet.append(x)
-        res = False
-print(res)
-
-
+# return False if len(set(nums))==len(nums) else True
     
+nums = [4,1,2,1,2]
+
+res = 0
+for i in nums:
+    res = i ^ res
+print(res)
