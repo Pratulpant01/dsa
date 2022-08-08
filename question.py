@@ -83,6 +83,11 @@ else:
 #OR
 
 # return False if len(set(nums))==len(nums) else True
+
+
+# Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+
     
 nums = [4,1,2,1,2]
 
