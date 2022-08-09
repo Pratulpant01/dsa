@@ -95,3 +95,30 @@ res = 0
 for i in nums:
     res = i ^ res
 print(res)
+
+
+
+#Function to find a continuous sub-array which adds up to a given number.
+class Solution:
+    def subArraySum(self,arr, n, s): 
+        p1 = 0
+        p2 = 0
+        sum = arr[0]
+        if(sum == s):
+            return (1,1)
+        if(s == 0):
+            return {-1}
+        while (p2 < n-1):
+            if(sum + arr[p2+1] <= s):
+                sum += arr[p2+1]
+                p2+=1
+                
+            else:
+                sum -= arr[p1]
+                p1+=1
+                
+            if(sum == s):
+                return(p1+1, p2+1)
+            
+                
+        return {-1}
