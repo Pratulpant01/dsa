@@ -149,4 +149,35 @@ class Solution:
 	#                 step = maxR-i
 
 
-           
+# Given a sorted array of size N and an integer K, find the position at which K is present in the array using binary search.
+
+
+# class Solution:	
+# 	def binarysearch(self, arr, n, k):
+# 	    low = 0
+# 	    high = n-1
+# 	    while low<= high:
+# 	        mid = low+(high-low)//2
+# 	        if(arr[mid] == k):
+# 	            return mid
+# 	        elif(arr[mid]>k):
+# 	            high = mid-1
+# 	        else:
+# 	            low=mid+1
+# 	    return -1           
+
+
+# Given an array arr[] of positive integers of size N. Reverse every sub-array group of size K.
+
+# class Solution:	
+#     #Function to reverse every sub-array group of size k.
+# 	def reverseInGroups(self, arr, N, K):
+# 	    i=0
+# 		while(i<N):
+# 		    left = i
+# 		    right = min(i+K-1, N-1)
+# 		    while(left< right):
+# 		        arr[left], arr[right] = arr[right], arr[left]
+# 		        left +=1
+# 		        right-=1
+# 		    i += K
