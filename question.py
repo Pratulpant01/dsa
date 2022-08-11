@@ -169,15 +169,25 @@ class Solution:
 
 # Given an array arr[] of positive integers of size N. Reverse every sub-array group of size K.
 
-# class Solution:	
-#     #Function to reverse every sub-array group of size k.
-# 	def reverseInGroups(self, arr, N, K):
-# 	    i=0
-# 		while(i<N):
-# 		    left = i
-# 		    right = min(i+K-1, N-1)
-# 		    while(left< right):
-# 		        arr[left], arr[right] = arr[right], arr[left]
-# 		        left +=1
-# 		        right-=1
-# 		    i += K
+#Function to reverse every sub-array group of size k.
+def reverseInGroups(self, arr, N, K):
+	i=0
+	while(i<N):
+		left = i
+		right = min(i+K-1, N-1)
+		while(left< right):
+		    arr[left], arr[right] = arr[right], arr[left]
+		    left +=1
+		    right-=1
+		i += K
+
+# Given two arrays A and B of equal size N, the task is to find if given arrays are equal or not. Two arrays are said to be equal if both of them contain same set of elements, arrangements (or permutation) of elements may be different though.
+
+
+def check(self,A,B,N):
+    A.sort()
+    B.sort()
+    for i in range(N):
+        if(A[i] != B[i]):
+            return False
+    return True
