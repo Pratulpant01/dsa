@@ -170,16 +170,16 @@ class Solution:
 # Given an array arr[] of positive integers of size N. Reverse every sub-array group of size K.
 
 #Function to reverse every sub-array group of size k.
-def reverseInGroups(self, arr, N, K):
-	i=0
-	while(i<N):
-		left = i
-		right = min(i+K-1, N-1)
-		while(left< right):
-		    arr[left], arr[right] = arr[right], arr[left]
-		    left +=1
-		    right-=1
-		i += K
+# def reverseInGroups(self, arr, N, K):
+# 	i=0
+# 	while(i<N):
+# 		left = i
+# 		right = min(i+K-1, N-1)
+# 		while(left< right):
+# 		    arr[left], arr[right] = arr[right], arr[left]
+# 		    left +=1
+# 		    right-=1
+# 		i += K
 
 # Given two arrays A and B of equal size N, the task is to find if given arrays are equal or not. Two arrays are said to be equal if both of them contain same set of elements, arrangements (or permutation) of elements may be different though.
 
@@ -191,3 +191,18 @@ def check(self,A,B,N):
         if(A[i] != B[i]):
             return False
     return True
+
+# Given an array Arr (distinct elements) of size N. Rearrange the elements of array in zig-zag fashion. The converted array should be in form a < b > c < d > e < f. The relative order of elements is same in the output i.e you have to iterate on the original array only.
+
+arr = [4, 3, 7, 8, 6, 2, 1]
+n = 7
+flag= True
+for i in range(n-1):
+    if flag is True:
+        if arr[i]> arr[i+1]:
+            arr[i], arr[i+1] = arr[i+1], arr[i]
+    else:
+        if arr[i]< arr[i+1]:
+            arr[i], arr[i+1] = arr[i+1], arr[i]
+    flag = bool(1-flag)
+
