@@ -207,3 +207,40 @@ for i in range(n-1):
     flag = bool(1-flag)
 
 
+# Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+
+def maxSubArray(self, nums: List[int]) -> int:
+        maxSub = nums[0]
+        currSum =0
+        for i in nums:
+            if currSum <0:
+                currSum = 0
+            currSum += i
+            maxSub = max(maxSub, currSum)
+        return maxSub
+
+# Given an array of n integers where each value represents the number of chocolates in a packet. Each packet can have a variable number of chocolates. There are m students, the task is to distribute chocolate packets such that: 
+
+
+def findmindiff(arr, n, m):
+    if m==0 or n == 0:
+        return 0
+    arr.sort()
+    if n <m:
+        return -1
+    min_diff = arr[n-1] - arr[0]
+    
+    for i in range(len(arr)-m+1):
+        min_diff = min(min_diff, arr[i+m-1]- arr[i])
+    return min_diff
+    
+
+
+if __name__ == "__main__":
+    arr = [12, 4, 7, 9, 2, 23, 25, 41,
+          30, 40, 28, 42, 30, 44, 48,
+          43, 50]
+    m = 7  # Number of students
+    n = len(arr)
+    print("Minimum difference is", findmindiff(arr, n, m))
+ 
