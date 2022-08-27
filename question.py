@@ -261,3 +261,21 @@ class Solution:
             prev = curr
             curr = nxt
         return prev
+# Given a singly linked list of size N of integers. The task is to check if the given linked list is palindrome or not.
+class Solution:
+    def isPalindrome(self, head):
+        #code here
+        nums=[]
+        
+        while head:
+            nums.append(head.data)
+            head = head.next
+        l = 0
+        r = len(nums) - 1
+        
+        while l<=r:
+            if nums[l] != nums[r]:
+                return False
+            l +=1
+            r-=1
+        return True
