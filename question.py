@@ -244,3 +244,20 @@ if __name__ == "__main__":
     n = len(arr)
     print("Minimum difference is", findmindiff(arr, n, m))
  
+
+#  Given a linked list of N nodes. The task is to reverse this list.
+
+
+class Solution:
+    #Function to reverse a linked list.
+    def reverseList(self, head):
+        # Code here
+        prev = None
+        curr = head
+        
+        while curr:
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
+        return prev
