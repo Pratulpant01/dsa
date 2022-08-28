@@ -279,3 +279,47 @@ class Solution:
             l +=1
             r-=1
         return True
+# Remove duplicate element from sorted Linked List
+
+def removeDuplicates(head):
+    curr = head
+    while curr:
+        while curr.next and curr.next.data == curr.data:
+            curr.next = curr.next.next
+        
+        curr = curr.next
+    return curr
+
+# Remove duplicates from an unsorted linked list
+
+class Solution:
+    #Function to remove duplicates from unsorted linked list.
+    def removeDuplicates(self, head):
+        # code here
+        d = {}
+        curr =head
+        prev = None
+        while curr:
+            if curr.data in d:
+                prev.next = curr.next
+                curr = curr.next
+            
+            else:
+                d[curr.data] = 1
+                prev = curr
+                curr = curr.next
+        return head
+
+
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        dummy = ListNode()
+        tail = dummy
+
+        while list1 and list2:
+            if list1.val<list2.val:
+                tail.next = list1
+                list1 = list1.next
+            else:
+                tail.next = list2
+                list2 = list2.next
