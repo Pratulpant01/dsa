@@ -310,6 +310,7 @@ class Solution:
                 curr = curr.next
         return head
 
+# 21. Merge Two Sorted Lists
 
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
@@ -323,3 +324,10 @@ class Solution:
             else:
                 tail.next = list2
                 list2 = list2.next
+            tail = tail.next
+
+        if list1:
+            tail.next = list1
+        elif list2:
+            tail.next = list2
+        return dummy.next

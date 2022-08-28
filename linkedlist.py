@@ -27,7 +27,6 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None
-    
     def traversal(self1):
         if self1.head is None:
             print('Singly Linked List is empty')
