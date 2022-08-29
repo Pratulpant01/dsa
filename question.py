@@ -72,6 +72,10 @@
 #     charSet.add(s[r])
 #     res = max(res, r-l +1)
 
+from multiprocessing import dummy
+from turtle import right
+
+
 nums = [1,2,3,4]
 charSet = set(nums)
 print(charSet)
@@ -349,3 +353,20 @@ def multiplyTwoLists(first, second):
             second_ptr = second_ptr.next
     
     return num1*num2
+
+# 19. Remove Nth Node From End of List
+
+def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+    dummyNode = ListNode(0, head),
+    left = dummyNode
+    right = head
+    while n>0 and right:
+        right = right.next
+        n-=1
+
+    while right:
+        left = left.next
+        right = right.next
+    
+    left.next = left.next.next
+    return dummyNode.next
