@@ -380,3 +380,25 @@ class Solution:
             l1 = l1.next if l1 else headB
             l2 = l2.next if l2 else headA
         return l1
+
+# Reverse a Doubly Linked List
+
+def reverseDLL(head):
+    #return head after reversing
+    curr = head
+    if curr == None or curr.next == None:
+        return head
+    while curr.next:
+        curr = curr.next
+    head = curr
+    curr.next = curr.prev
+    curr.prev = None
+    curr = curr.next
+    while curr.prev != None:
+        temp = curr.next
+        curr.next = curr.prev
+        curr.prev =temp
+        curr = curr.next
+    curr.prev = curr.next
+    curr.next = None
+    return head
