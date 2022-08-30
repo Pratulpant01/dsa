@@ -370,3 +370,13 @@ def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNod
     
     left.next = left.next.next
     return dummyNode.next
+
+# 160. Intersection of Two Linked Lists
+class Solution:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
+        l1 = headA
+        l2 = headB
+        while l1!=l2:
+            l1 = l1.next if l1 else headB
+            l2 = l2.next if l2 else headA
+        return l1
