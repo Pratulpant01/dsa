@@ -402,3 +402,35 @@ def reverseDLL(head):
     curr.prev = curr.next
     curr.next = None
     return head
+
+# Delete nodes having greater value on right
+
+class Solution:
+    def reverse(head):
+        prev = None
+        curr = head
+        while curr!=None:
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
+        return prev
+        
+    def compute(self,head):
+        #Your code here
+        head = Solution.reverse(head)
+        curr = head
+        ma = head.data
+        prev = head
+        head = head.next
+        while head !=None:
+            if head.data >= ma:
+                ma = head.data
+                prev= head
+                head = head.next
+            else:
+                prev.next = head.next
+                head = prev.next
+                
+        head = Solution.reverse(curr)
+        return head
