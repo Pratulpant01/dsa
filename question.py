@@ -434,3 +434,41 @@ class Solution:
                 
         head = Solution.reverse(curr)
         return head
+
+# Detect Loop in linked list
+class Solution:
+    def detectLoop(self, head):
+        low= head 
+        high = head
+
+        while low!=None and high!=None and high.next!=None:
+            low = low.next
+            high = high.next.next
+            if low == high:
+                return True
+        return False
+
+
+
+# Remove loop in Linked List
+class Solution:
+    def removeLoop(self, head):
+        low = head 
+        high = head
+        while low!= None and high!=None and high.next!= None:
+            low = low.next
+            high = high.next.next
+            if low == high:
+                break
+        
+        if low == head:
+            while high.next != low:
+                high = high.next
+            high.next = None
+        elif low == high:
+            low = head
+            while low.next != high:
+                low = low.next
+                high = high.next
+            high.next = None
+            
