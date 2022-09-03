@@ -511,3 +511,43 @@ def rotate(self, head, k):
 
 
 # Add two numbers represented by linked lists
+def addTwoLists(self, first, second):
+    def reverse(head):
+        curr = head
+        prev = None
+        nxt = None
+        while curr:
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
+        return prev
+    
+    first = reverse(first)
+    second = reverse(second)
+    carry = 0
+    res = None
+    curr = None
+
+    while first!= None or second != None:
+        sum = (first.data if first else 0) + (second.data if second else 0) + carry
+        carry = sum//10
+        digit = sum %10
+        temp = Node(digit)
+        if res == None:
+            res = temp
+        else:
+            curr.next = temp
+        curr = curr.next
+
+        if first:
+            first = first.next
+        if second:
+            second = second.next
+    if carry>1:
+        temp = Node(carry)
+        curr.next = temp
+        curr = curr.next
+    res = reverse(res)
+    return res
+
