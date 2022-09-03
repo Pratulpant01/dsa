@@ -472,3 +472,18 @@ class Solution:
                 high = high.next
             high.next = None
             
+# Nth node from end of linked list
+def getNthFromLast(head,n):
+    p = head
+    f = head
+    cnt = 1
+    while cnt<=n:
+        if f.next != None:
+            f = f.next
+            cnt +=1
+        else:
+            return -1
+    while f.next!=None:
+        p= p.next
+        f = f.next
+    return p.data
