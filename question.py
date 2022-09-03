@@ -477,7 +477,7 @@ def getNthFromLast(head,n):
     p = head
     f = head
     cnt = 1
-    while cnt<=n:
+    while cnt<=n-1:
         if f.next != None:
             f = f.next
             cnt +=1
@@ -487,3 +487,27 @@ def getNthFromLast(head,n):
         p= p.next
         f = f.next
     return p.data
+
+# Rotate a Linked List
+
+def rotate(self, head, k):
+    pntr = head
+    cnt =1
+    while pntr != None:
+        if cnt == k:
+            break
+        pntr = pntr.next
+    
+    new_head = pntr.next
+    if pntr.next:
+        pntr.next = None
+        q = new_head
+        while q.next != None:
+            q = q.next
+        q.next = head
+        return new_head
+    else:
+        return head
+
+
+# Add two numbers represented by linked lists
