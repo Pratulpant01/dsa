@@ -73,6 +73,7 @@
 #     res = max(res, r-l +1)
 
 from multiprocessing import dummy
+import re
 from turtle import right
 
 
@@ -297,7 +298,6 @@ def removeDuplicates(head):
 # Remove duplicates from an unsorted linked list
 
 class Solution:
-    #Function to remove duplicates from unsorted linked list.
     def removeDuplicates(self, head):
         # code here
         d = {}
@@ -522,7 +522,7 @@ def addTwoLists(self, first, second):
             prev = curr
             curr = nxt
         return prev
-    
+
     first = reverse(first)
     second = reverse(second)
     carry = 0
@@ -532,22 +532,50 @@ def addTwoLists(self, first, second):
     while first!= None or second != None:
         sum = (first.data if first else 0) + (second.data if second else 0) + carry
         carry = sum//10
-        digit = sum %10
+        digit = sum%10
         temp = Node(digit)
+        
         if res == None:
-            res = temp
+            res =temp
         else:
             curr.next = temp
-        curr = curr.next
-
+        curr = temp
+        
         if first:
             first = first.next
         if second:
             second = second.next
-    if carry>1:
+
+    if carry != 0:
         temp = Node(carry)
         curr.next = temp
-        curr = curr.next
+        curr = temp
     res = reverse(res)
     return res
 
+
+    
+
+# Reverse a Linked List in groups of given size.
+def reverse(self,head, k):
+        curr= head
+        prev = None
+        nxt = None
+        count = 0
+
+        while curr != None and count < k:
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
+            count +=1
+            
+        if nxt:
+            head.next = Solution().reverse(nxt, k)
+        return prev
+
+# Delete without head pointer
+def deleteNode(self,curr_node):
+    next_node = curr_node.next
+    curr_node.data = next_node.data
+    curr_node.next = None
