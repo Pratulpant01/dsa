@@ -579,3 +579,15 @@ def deleteNode(self,curr_node):
     next_node = curr_node.next
     curr_node.data = next_node.data
     curr_node.next = None
+
+# Check If Circular Linked List
+
+def isCircular(head):
+    c1 = head
+    c2 = head
+    while c1 and c2 and c2.next:
+        c1 = c1.next
+        c2= c2.next.next
+        if c1 == c2:
+            return 1
+    return 0
