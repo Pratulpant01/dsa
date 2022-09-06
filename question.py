@@ -618,3 +618,73 @@ def deleteMid(head):
     
     return head
         
+# Linked List Length Even or Odd?
+
+def isLengthEvenOrOdd(head):
+    curr = head
+    count = 1
+
+    while curr.next:
+        curr = curr.next
+        count+=1
+    
+    if count%2 == 0:
+        return True
+    else:
+        return False
+
+# Insert in Middle of Linked List
+
+def insertInMid(head,node):
+    curr = head
+
+    count = 0
+
+    while curr.next:
+        count+=1
+        curr = curr.next
+        
+    
+    curr = head
+    c = 0
+    while c< count//2:
+        c+=1
+        curr = curr.next
+        
+    
+    nxt = curr.next
+    curr.next = node
+    node.next = nxt
+
+# Identical Linked Lists
+def areIdentical(head1, head2):
+    first = head1
+    second = head2
+    
+    while first.data == second.data:
+        first = first.next
+        second = second.next
+        if first == None:
+            return True
+            break
+
+    
+    return False
+        
+# Find length of Loop
+
+def countNodesinLoop(head):
+    c1 = head
+    c2 = head
+    while c1 and c2 and c2.next:
+        c1= c1.next
+        c2 = c2.next.next
+        
+        if c1 == c2:
+            count = 1
+            c1 = c1.next
+            while c1 != c2:
+                c1 = c1.next
+                count+=1
+            return count
+    return 0
