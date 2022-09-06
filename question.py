@@ -595,10 +595,6 @@ def isCircular(head):
 # Delete Middle of Linked List
 
 def deleteMid(head):
-    '''
-    head:  head of given linkedList
-    return: head of resultant llist
-    '''
     curr = head
     count = 1
     
