@@ -688,3 +688,70 @@ def countNodesinLoop(head):
                 count+=1
             return count
     return 0
+
+# Intersection of two sorted Linked lists
+
+def findIntersection(head1,head2):
+    first = head1
+    second = head2
+    temp = Node(0)
+    dummy = temp
+    while first and second:
+        if first.data == second.data:
+            dummy.next = Node(first.data)
+            dummy = dummy.next
+            first = first.next
+            second = second.next
+        elif first.data<second.data:
+            first = first.next
+        else:
+            second = second.next
+        
+    temp = temp.next
+
+    return temp
+
+# Pairwise swap elements of a linked list
+
+def pairWiseSwap(self, head):
+    curr = head
+    count = 0
+    prev = None
+    while curr and count<2:
+        nxt = curr.next
+        curr.next = prev
+        prev = curr
+        curr = nxt
+        count+=1
+    
+    if nxt:
+        head.next = Solution().pairWiseSwap(nxt)
+    
+    return prev
+
+
+# Insert in a Sorted List
+
+def sortedInsert(self, head1,key):
+        curr = head1
+        temp = Node(key)
+
+        while curr and curr.data < key:
+            prev = curr
+            curr = curr.next
+    
+        if curr == head1:
+            temp.next = head1
+            head1 = temp
+    
+        else:
+            nxt = prev.next
+            prev.next = temp
+            temp.next = nxt
+    
+        return head1
+
+
+
+
+        
