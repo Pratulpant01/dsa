@@ -1,5 +1,8 @@
 # Reverse a String
 
+from operator import le
+
+
 def reverseWord(s):
     #your code here
     s1 = ''
@@ -31,3 +34,29 @@ def ispar(self,x):
                 s.pop()
     return True if not s else False
             
+
+# Reverse words in a given string
+
+def reverseWords(self,S):
+    a = S.split()
+    left = 0
+    right = len(S)-1
+
+    while left< right:
+        a[left], a[right] = a[right], a[left]
+        left+=1
+        right-=1
+    
+    return ".".join(a)
+
+
+# Implement strstr
+
+def strstr(s,x):
+    if s == '':
+        return 0
+    
+    for i in range(len(s)+1 - len(x)):
+        if s[i: i+len(x)] == x:
+            return i
+    return -1
