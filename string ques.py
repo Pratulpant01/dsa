@@ -80,17 +80,53 @@ def isAnagram(self,a,b):
             return False
     return True
 
+
 # Check if string is rotated by two places
 
-def isRotated(self,str1,str2):
-        #code here
-        a = str1
-        b = str2
-        if len(a) != len(b):
-            return False
-        temp = a + a
-        
-        if b in temp:
-            return True
-        else:
-            return False
+def isRotated(self, str1, str2):
+
+    if str1 != str2:
+        return False
+    if len(str1)<2:
+        return str1 == str2
+    
+    clock_rot = ''
+    anti_rot = ''
+    l = len(str2)
+
+    anti_rot = (anti_rot + str2[l-2:] + str2[0:l-2])
+    clock_rot = (clock_rot + str2[2:] + str2[0:2])
+
+    return (str1 == anti_rot) or (str1 == clock_rot)
+
+
+
+
+# Longest Common Prefix in an Array
+
+def longestCommonPrefix(self, arr, n):
+
+    res = ''
+
+    for i in range(len(arr[0])):
+        for s in arr:
+            if i == len(s) or s[i] != arr[0][i]:
+                if res == '':
+                    return -1
+                return res
+        res += arr[0][i]
+
+    return res
+
+# Reverse a string using Stack
+
+def reverse(S):
+    stack = []
+    res = ''
+
+    for i in S:
+        stack.append(a)
+    
+    for i in S:
+        res = res + stack.pop()
+    return res
