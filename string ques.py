@@ -130,3 +130,32 @@ def reverse(S):
     for i in S:
         res = res + stack.pop()
     return res
+
+# Anagram of String
+
+def remAnagram(str1,str2):
+    S1 = len(str1)
+    S2 = len(str2)
+    str1 = list(str1)
+    str2 = list(str2)
+    dup = 0
+    if S1 > S2:
+        for i in str2:
+            if i in str1:
+                dup += 1
+                str1.remove(i)
+    else:
+        for i in str1:
+            if i in str2:
+                dup += 1
+                str2.remove(i)
+    return (S1 - dup) + (S2 - dup) 
+
+# Remove Duplicates
+def removeDups(self, S):
+    l = []
+
+    for i in S:
+        if i not in l:
+            l.append(i)
+    return ''.join(l)
