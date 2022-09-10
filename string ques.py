@@ -159,3 +159,36 @@ def removeDups(self, S):
         if i not in l:
             l.append(i)
     return ''.join(l)
+
+
+# Valid Substring
+def findMaxLen(ob, S):
+        stack = []
+        stack.append(-1)
+        res = 0
+        
+        for i in range(len(S)):
+            if S[i] == '(':
+                stack.append(i)
+            else:
+                stack.pop()
+                if stack:
+                    res = max(res, i - stack[-1])
+                else:
+                    stack.append(i)
+                    
+        return res
+
+# Check if strings are rotations of each other or not
+
+def areRotations(self,s1,s2):
+        #code here
+        
+        temp = s1 + s1
+        if len(s1)!= len(s2):
+            return 0
+        
+        if s2 in temp:
+            return 1
+        else:
+            return 0
