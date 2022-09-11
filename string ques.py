@@ -192,3 +192,23 @@ def areRotations(self,s1,s2):
             return 1
         else:
             return 0
+
+# Kadane's Algorithm
+# if the sum of a sub array is negative set 
+# the complete sum to 0 and start calculating sum again 
+
+def maxSubArraySum(self,arr,N):
+    currSum= 0
+    maxSum = arr[0]
+
+    for i in range(len(arr)):
+        currSum = currSum + arr[i]
+
+        if currSum> maxSum:
+            maxSum = currSum
+        if currSum<0:
+            currSum = 0
+    
+    return maxSum
+
+
