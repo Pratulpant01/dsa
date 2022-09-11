@@ -211,4 +211,25 @@ def maxSubArraySum(self,arr,N):
     
     return maxSum
 
+# Majority Element
+
+def majorityElement(self, A, N):
+    res = 0
+    count = 0
+
+    for n in A:
+        if count == 0:
+            res = n
+        count += 1 if n == res else -1
+    
+    count = 0
+    for i in a:
+        if res == i:
+            count+=1
+    
+    if count<= (N//2):
+        return -1
+    else:
+        return res
+
 
