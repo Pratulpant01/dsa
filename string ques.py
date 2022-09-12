@@ -296,3 +296,20 @@ def inversionCount(self, arr, n):
   
         return inv_count
             
+# Maximum Occuring Character
+
+def getMaxOccurringChar(self,s):
+    max = -1
+    res = {}
+    result = ''
+
+    for i in s:
+        res[s[i]] = 1+ res.get(i, 0)
+    
+    for i in range(len(s)):
+        if max< res[s[i]]:
+            max = res[s[i]]
+            result = s[i]
+    
+    return result
+        
