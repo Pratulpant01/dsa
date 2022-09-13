@@ -2,6 +2,7 @@
 
 from itertools import count
 from operator import le
+import re
 
 
 def reverseWord(s):
@@ -313,3 +314,22 @@ def getMaxOccurringChar(self,s):
     
     return result
         
+
+# Maximum Product Subarray
+
+def maxProduct(self,arr, n):
+
+    res = max(arr)
+    currMax, currMin = 1,1
+
+    for i in arr:
+        if i ==0:
+            currMax, currMin = 1,1
+        
+        temp = currMax*i
+        currMax = max(currMax*i, currMin*i, i)
+        currMin = min(currMin*i, temp, i)
+
+        res = max(res, currMax)
+
+    return res
