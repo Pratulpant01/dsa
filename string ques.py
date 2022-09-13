@@ -333,3 +333,21 @@ def maxProduct(self,arr, n):
         res = max(res, currMax)
 
     return res
+
+# Find Missing And Repeating
+
+def findTwoElement( self,arr, n):
+    result = [0,1]
+
+    for i in range(len(arr)):
+        if arr[abs(arr[i])-1]<0:
+            result[0] = abs(arr[i])
+        else:
+            arr[abs(arr[i])-1] = -arr[abs(arr[i])-1]
+
+    for i in range(len(arr)):
+        if arr[i]>0:
+            result[1] = arr[i]
+            break
+    return result
+        
