@@ -377,4 +377,34 @@ def max_of_subarrays(self,arr,n,k):
     res.append(arr[q[0]])
     return res
 
+# K-th element of two sorted Arrays
+
+def kthElement(self,  arr1, arr2, n, m, k):
+    res = []
+    i=0
+    j=0
+    d=0
+
+    while i<n and j<m:
+        if arr1[i]< arr2[j]:
+            res.append(arr1[i])
+            i+=1
+        else:
+            res.append(arr2[j])
+            j+=1
+        d+=1
+    
+    while i<n:
+        res.append(arr1[i])
+        i+=1
+        d+=1
+
+    while j<n:
+        res.append(arr2[j])
+        j+=1
+        d+=1
+    
+    return res[k-1]
+    
         
+
