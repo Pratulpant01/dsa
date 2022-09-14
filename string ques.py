@@ -1,5 +1,6 @@
 # Reverse a String
 
+from collections import deque
 from itertools import count
 from operator import le
 import re
@@ -350,4 +351,30 @@ def findTwoElement( self,arr, n):
             result[1] = arr[i]
             break
     return result
+        
+
+# Maximum of all subarrays of size k
+
+def max_of_subarrays(self,arr,n,k):
+    q = deque()
+    res = []
+
+    for i in range(k):
+        while q and arr[i] >= arr[q[-1]]:
+            q.pop()
+        q.append(arr[i])
+
+    for i in range(k, n):
+        res.append(arr[q[0]])
+
+        while q and q[0] <= i-k:
+            q.popleft()
+        
+        while q and arr[i]>= arr[q[-1]]:
+            q.pop()
+        q.append(arr[i])
+
+    res.append(arr[q[0]])
+    return res
+
         
