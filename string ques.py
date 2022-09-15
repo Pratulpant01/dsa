@@ -405,6 +405,21 @@ def kthElement(self,  arr1, arr2, n, m, k):
         d+=1
     
     return res[k-1]
+
+# Missing number in array
+
+def MissingNumber(self,array,n):
+    expectedSum = (n*(n+1))//2
+
+    total = 0
+
+    for i in array:
+        total +=1
+    
+    return expectedSum - total
+
+# Smallest Positive missing number
+
     
         
 
