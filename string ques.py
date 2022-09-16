@@ -442,3 +442,51 @@ def missingNumber(self,arr,n):
 
         
 
+# Minimum Swaps to Sort
+
+def minSwaps(self, nums):
+    swap =0
+    a = sorted(nums)
+    res = {}
+    n = len(nums)
+    temp = 0
+
+    for i in range(n):
+        res[nums[i]] = i
+    
+
+    for i in range(n):
+        if nums[i] != a[i]:
+            swap +=1
+            temp = nums[i]
+
+            nums[i], nums[res[a[i]]] = nums[res[a[i]]], nums[i]
+            res[temp] = res[a[i]]
+            res[a[i]] = i
+    return swap
+
+# Sort an array of 0s, 1s and 2s Part 1
+
+
+def sort012(self,arr,n):
+        # code here
+        a = 0
+        b = 0
+        c = 0
+        
+        for i in arr:
+            if i == 0:
+                a +=1
+            elif i ==1:
+                b+=1
+            else:
+                c+=1
+        
+        for i in range(a):
+            arr[i] = 0
+        for i in range(a, b):
+            arr[i] = 1
+        for i in range(a+b, a+b+c):
+            arr[i] = 2
+        
+        return arr
