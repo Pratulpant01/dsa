@@ -789,3 +789,16 @@ def duplicates(self, arr, n):
     return ans
 
         
+# Remove duplicate elements from sorted Array
+
+def remove_duplicate(self, A, N):
+    j = 0
+    for i in range(N):
+        if A[i] != A[i+1]:
+            A[j] = A[i]
+            j+=1
+    A[j] = A[N-1]
+    j+=1
+
+    return j
+
