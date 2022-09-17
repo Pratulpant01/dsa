@@ -75,6 +75,7 @@
 from multiprocessing import dummy
 import re
 from turtle import right
+from unittest import result
 
 
 nums = [1,2,3,4]
@@ -752,6 +753,39 @@ def sortedInsert(self, head1,key):
         return head1
 
 
+# Rotate Array
 
+def rotateArr(self,A,D,N):
+    def rotate(arr, low, high):
+        while low<high:
+            arr[low], arr[high] = arr[high], arr[low]
+            low+=1
+            high-=1
+        
+
+    D = D%N
+
+    reverse(A,0, D-1)
+    reverse(A, D, N-1)
+    reverse(A, 0, N-1)
+
+    return A
+
+# Find duplicates in an array
+
+def duplicates(self, arr, n): 
+    result = [0] * n
+    ans = []
+    for i in range(n):
+        result[arr[i]] +=1
+    
+    for i in range(len(result)):
+        if result[i] >1:
+            ans.append(i)
+        
+    if not ans:
+        ans.append(-1)
+            
+    return ans
 
         
