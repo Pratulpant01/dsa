@@ -582,3 +582,40 @@ def sort012(self,arr,n):
             m+=1
     
     return arr
+
+# Largest subarray with 0 sum
+def maxLen(self, n, arr):
+    maxi = 0
+    sum = 0
+    res = {}
+
+    for i in range(n):
+        sum+=arr[i]
+        if sum == 0:
+            maxi = i+1
+        else:
+            if res.get(sum) != None:
+                maxi = max(maxi, i-res.get(sum))
+            else:
+                res[sum] = i
+    return maxi
+
+# Intersection of two arrays
+def NumberofElementsInIntersection(self,a, b, n, m):
+
+    a.sort()
+    b.sort()
+    i = 0
+    j = 0
+    s = set()
+
+    while i<n and j<m:
+        if a[i]>b[j]:
+            j+=1
+        elif a[i]<b[j]:
+            i+=1
+        else:
+            s.add(a[i])
+            i+=1
+            j+=1
+    return len(s)
