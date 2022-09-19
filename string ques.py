@@ -635,3 +635,18 @@ def find3Numbers(self,A, n, X):
             else:
                 r-=1
     return False
+
+# Equilibrium Point
+def equilibriumPoint(self,A, N):
+    leftSum = 0
+    rightSum = 0
+
+    for i in range(N):
+        rightSum+= A[i]
+    for i in range(N):
+        rightSum -= A[i]
+        if rightSum == leftSum:
+            return i+1
+        else:
+            leftSum+= A[i]
+    return -1
