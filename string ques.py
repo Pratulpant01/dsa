@@ -685,3 +685,31 @@ def peakElement(self,arr, n):
         if arr[i]>= arr[i-1] and arr[i]>= arr[i+1]:
             return i
 
+# Union of Two Sorted Arrays
+def mergeArrays(self,a,b,n,m):
+
+    i = 0
+    j= 0
+    res = set()
+
+    while i<n and j<m:
+        if a[i]<b[j]:
+            res.add(a[i])
+            i+=1
+
+        elif a[i]> b[j]:
+            res.add(b[j])
+            j+=1
+        else:
+            res.add(a[i])
+            i+=1
+            j+=1
+    while i<n:
+        res.add(a[i])
+        i+=1
+    while j<m:
+        res.add(b[j])
+        j+=1
+
+    return sorted(res)
+
