@@ -713,3 +713,16 @@ def mergeArrays(self,a,b,n,m):
 
     return sorted(res)
 
+
+# 1. Two Sum
+
+def twoSum(self, nums: List[int], target: int) -> List[int]:
+    res ={}
+
+    for i, n in enumerate(nums):
+        diff = target-i
+        if diff in res:
+            return [res[diff], i]
+        res[n] = i
+    
+
