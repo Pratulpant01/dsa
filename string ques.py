@@ -744,3 +744,57 @@ def maxProfit(self, prices: List[int]) -> int:
         r +=1
     return maxP
 
+# Contains Duplicate
+# Method 1 using hashmap
+
+def containsDuplicate(self, nums: List[int]) -> bool:
+    res = {}
+    n = len(nums)
+
+    for i in range(n):
+        res[nums[i]] = 1+ res.get(nums[i], 0)
+    
+    for i in range(n):
+        if res[nums[i]]>1:
+            return True
+    
+    return False
+
+# Method 2 using sorting
+def containsDuplicate(self, nums: List[int]) -> bool:
+
+    nums.sort()
+    for i in range(len(nums)-1):
+        if nums[i] == nums[i+1]:
+            return True
+    return False
+
+
+# Maximum Index
+def maxIndexDiff(self,arr, n): 
+    lMin = [0] * n
+    rMax = [0]*n
+    maxi = 0
+
+    lMin[0] = arr[0]
+
+    for i in range(1, n):
+        lMin[i] = min(arr[i], lMin[i-1])
+    
+    rMax[n-1] = arr[n-1]
+
+    for i in range(n-2, -1, -1):
+        rMax[i-1] = max(arr[i], rMax[i+1])
+
+    
+    i = 0
+    j= 0
+
+    while i < n and j<n:
+        if lMin[i]<= rMax[j]:
+            maxi = max(max, j-1)
+            j+=1
+        else:
+            i+=1
+        
+    return maxi
