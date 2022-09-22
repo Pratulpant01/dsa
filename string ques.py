@@ -726,3 +726,21 @@ def twoSum(self, nums: List[int], target: int) -> List[int]:
         res[n] = i
     
 
+# Best Time to Buy and Sell Stock
+
+def maxProfit(self, prices: List[int]) -> int:
+    n = len(prices)
+    l = 0
+    r = 1   
+
+    maxP = 0
+
+    while r<n:
+        if prices[l]<prices[r]:
+            profit = prices[r] - prices[l]
+            maxP = max(maxP, profit)
+        else:
+            l = r
+        r +=1
+    return maxP
+
