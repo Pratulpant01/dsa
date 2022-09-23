@@ -798,3 +798,4 @@ def maxIndexDiff(self,arr, n):
             i+=1
         
     return maxi
+
