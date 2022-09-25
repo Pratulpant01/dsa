@@ -821,3 +821,26 @@ def findMin(self, nums: List[int]) -> int:
             else:
                 r= m-1
         return res
+
+# Minimum Swaps to Sort
+
+def minSwaps(self, nums):
+    swap =0
+    a = sorted(nums)
+    res = {}
+    n = len(nums)
+    temp = 0
+
+    for i in range(n):
+        res[nums[i]] = i
+    
+
+    for i in range(n):
+        if nums[i] != a[i]:
+            swap +=1
+            temp = nums[i]
+
+            nums[i], nums[res[a[i]]] = nums[res[a[i]]], nums[i]
+            res[temp] = res[a[i]]
+            res[a[i]] = i
+    return swap
