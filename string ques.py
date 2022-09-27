@@ -869,3 +869,24 @@ def search(self, nums: List[int], target: int) -> int:
             else:
                 l = mid+1
     return -1
+
+# Minimum element in a sorted and rotated array
+def findMin(self, arr, n):
+    l =0
+    r = n-1
+    res = arr[0]
+
+    while l<=r:
+        if arr[l]<= arr[r]:
+            res = min(res, arr[l])
+            break
+
+        mid = (l+r)//2
+
+        res = min(res, mid)
+
+        if arr[mid]>= arr[l]:
+            l= mid+1
+        else:
+            r= mid-1
+    return res
