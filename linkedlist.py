@@ -1,19 +1,19 @@
-# class Node:
-#     def __init__(self, data):
-#         self.data = data
-#         self.next = None
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
 
-# n1 = Node(5)
-# print(n1.data)
-# print(n1.next)
+n1 = Node(5)
+print(n1.data)
+print(n1.next)
         
-# #creating a linked list
-# class LinkedList:
-#     def __init__(self):
-#         self.head = None
+#creating a linked list
+class LinkedList:
+    def __init__(self):
+        self.head = None
 
-# sll = LinkedList()
+sll = LinkedList()
 
 #Traversal in LinkedList
 
