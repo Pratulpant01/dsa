@@ -1,5 +1,6 @@
 # Reverse a String
 
+from asyncio import exceptions
 from collections import deque
 from itertools import count
 from operator import le
@@ -935,3 +936,13 @@ def threeSum(self, nums: List[int]) -> List[List[int]]:
                 while nums[l] == nums[l-1] and l<r:
                     l+=1
     return res
+
+# Missing number in array
+
+def MissingNumber(self,array,n):
+    expectedSum = (n*(n+1)) //2
+    total = 0
+    for i in array:
+        total +=i
+        
+    return expectedSum
