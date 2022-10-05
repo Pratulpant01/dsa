@@ -946,3 +946,13 @@ def MissingNumber(self,array,n):
         total +=i
 
     return expectedSum - total
+
+# Longest Increasing Subsequence
+def longestSubsequence(self,a,n):
+    res = [1]*n
+
+    for i in range(n-1, -1, -1):
+        for j in range(i+1, n):
+            if a[i]<a[j]:
+                res[i] = max(res[i], 1+res[j])
+    return max(res)
