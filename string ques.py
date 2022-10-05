@@ -944,5 +944,5 @@ def MissingNumber(self,array,n):
     total = 0
     for i in array:
         total +=i
-        
-    return expectedSum
+
+    return expectedSum - total
