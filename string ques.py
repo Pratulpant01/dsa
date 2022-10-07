@@ -997,3 +997,16 @@ def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
                 j+=1
         return res
 
+# Check if strings are rotations of each other or not
+
+def areRotations(self,s1,s2):
+        #code here
+        
+        temp = s1 + s1
+        if len(s1)!= len(s2):
+            return 0
+        
+        if s2 in temp:
+            return 1
+        else:
+            return 0
